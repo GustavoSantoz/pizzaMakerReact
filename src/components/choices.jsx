@@ -2,7 +2,7 @@ import React from 'react'
 import Option from './option.jsx'
 
 
-const Choices = ({type}) => {
+const Choices = ({ type }) => {
     switch (type) {
         case 'massa':
             return <>
@@ -14,6 +14,7 @@ const Choices = ({type}) => {
                         value="borda"
                         linkImg="https://studio.code.org/v3/assets/1M0wVT7H--jMKxjDJMc3ZQZGs7pYH3KRZNxtxFT3m3U/Pizzaa-01.png?t=1670932317000"
                         descricao="Borda Recheada"
+                        img={true}
                     />
 
                     <Option
@@ -22,6 +23,7 @@ const Choices = ({type}) => {
                         value="tradicional"
                         linkImg="https://studio.code.org/v3/assets/1M0wVT7H--jMKxjDJMc3ZQZGs7pYH3KRZNxtxFT3m3U/Pizzaa-02.png?t=1670932317000"
                         descricao="Massa Tradicional"
+                        img={true}
                     />
 
                     <Option
@@ -30,6 +32,7 @@ const Choices = ({type}) => {
                         value="fina"
                         linkImg="https://studio.code.org/v3/assets/1M0wVT7H--jMKxjDJMc3ZQZGs7pYH3KRZNxtxFT3m3U/Pizzaa-03.png?t=1670932317000"
                         descricao="Massa Fina"
+                        img={true}
                     />
 
                 </ul>
@@ -44,6 +47,7 @@ const Choices = ({type}) => {
                         value="vermelho"
                         linkImg="https://studio.code.org/v3/assets/1M0wVT7H--jMKxjDJMc3ZQZGs7pYH3KRZNxtxFT3m3U/Pizzaa-05.png?t=1670932317000"
                         descricao="Molho de Tomate"
+                        img={true}
                     />
 
                     <Option
@@ -52,11 +56,21 @@ const Choices = ({type}) => {
                         value="amarelo"
                         linkImg="https://studio.code.org/v3/assets/1M0wVT7H--jMKxjDJMc3ZQZGs7pYH3KRZNxtxFT3m3U/Pizzaa-04.png?t=1670932317000"
                         descricao="Molho Amarelo"
+                        img={true}
                     />
 
 
                 </ul>
             </>;
+
+        case 'tipo':
+            return <>
+                <h2>Tipo:</h2>
+                <ul>
+                <Option id="checkboxVeg" name="recheio" value="verdura" text="Verdura"></Option>
+                <Option id="checkboxNon-veg" name="recheio" value="carne" text="Carne"></Option>
+                </ul>
+            </>
     }
 
 }
