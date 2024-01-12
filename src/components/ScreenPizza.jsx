@@ -8,7 +8,7 @@
  * @param {Props} props 
  * @returns 
  */
-export function PizzaScreen({ molho, tipos, borda }) {
+export function PizzaScreen({ molho, tipos, borda, submit2 }) {
   let bordaTipo = '';
 
   switch (borda) {
@@ -29,7 +29,7 @@ export function PizzaScreen({ molho, tipos, borda }) {
   
   let tipoUrl;
 
-  if (tipos == "carne" && "verdura") {
+  if (tipos.length === 2) {
     tipoUrl = 'https://studio.code.org/v3/assets/ai36I_gY5JPKznE1ttg-CqVl0NhRRSPu1b34n7Ctx6c/Non-veg.png?t=1671892191000'
   } else {
     if (tipos[0] === 'carne'){
@@ -67,7 +67,7 @@ export function PizzaScreen({ molho, tipos, borda }) {
         
       </div>
       <footer>
-        <button id="buttonBack">⬅️</button>
+        <button onClick={submit2} id="buttonCart">⬅️</button>
       </footer>
     </section>
   );
