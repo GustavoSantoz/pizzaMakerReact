@@ -3,6 +3,16 @@ import Option from './option.jsx'
 
 
 const Choices = ({ type, onMassa, onMolho, onTipo }) => {
+    function EscolhaDeTipos(e) {
+        if (e == "carne" && e == "verdura") {
+            console.log("Os dois");
+        } else if (e == 'carne') {
+            console.log("Apenas Carne");
+        } else {
+            console.log("Apenas Verdura");
+        }
+    }
+
     switch (type) {
         case 'massa':
             return <>
@@ -16,6 +26,7 @@ const Choices = ({ type, onMassa, onMolho, onTipo }) => {
                         descricao="Borda Recheada"
                         img={true}
                         onCheck={() => onMassa('borda')}
+                        type='radio'
                     />
 
                     <Option
@@ -26,6 +37,7 @@ const Choices = ({ type, onMassa, onMolho, onTipo }) => {
                         descricao="Massa Tradicional"
                         img={true}
                         onCheck={() => onMassa('tradicional')}
+                        type='radio'
                     />
 
                     <Option
@@ -36,6 +48,7 @@ const Choices = ({ type, onMassa, onMolho, onTipo }) => {
                         descricao="Massa Fina"
                         img={true}
                         onCheck={() => onMassa('fina')}
+                        type='radio'
                     />
 
                 </ul>
@@ -52,6 +65,7 @@ const Choices = ({ type, onMassa, onMolho, onTipo }) => {
                         descricao="Molho de Tomate"
                         img={true}
                         onCheck={() => onMolho('vermelho')}
+                        type='radio'
                     />
 
                     <Option
@@ -62,6 +76,7 @@ const Choices = ({ type, onMassa, onMolho, onTipo }) => {
                         descricao="Molho Amarelo"
                         img={true}
                         onCheck={() => onMolho('amarelo')}
+                        type='radio'
                     />
 
 
@@ -77,21 +92,18 @@ const Choices = ({ type, onMassa, onMolho, onTipo }) => {
                         name="recheio"
                         value="verdura"
                         text="Vegetariana"
-                        onCheck={() => onTipo(['verdura'])}
+                        img={false}
+                        onCheck={() => EscolhaDeTipos(["verdura"])}
+                        type='checkbox'
                     />
                     <Option
                         id="checkboxNon-veg"
                         name="recheio"
                         value="carne"
                         text="Carnivora"
-                        onCheck={() => onTipo(['carne'])}
-                    />
-                    <Option
-                        id="checkboxVeg"
-                        name="recheio"
-                        value="verdura"
-                        text="Vegetariana com carne"
-                        onCheck={() => onTipo(['verdura', 'carne'])}
+                        img={false}
+                        onCheck={() => EscolhaDeTipos(["carne"])}
+                        type='checkbox'
                     />
                 </ul>
             </>
